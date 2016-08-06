@@ -1,0 +1,53 @@
+<!-- shopping cart -->
+<div class="cart-container">
+	<p id="cart-title">Shopping Cart</p>
+	<div class="cart-empty" ng-hide="cartItems.length>0">
+		<p class="cart-empty-heading">Shopping Cart is Empty</p>
+		<p class="cart-empty-line">You have no items in your shopping cart</p>
+		<p class="cart-empty-line">Click <a href="#/home">here</a> to continue shopping.</p>
+	</div>
+	<div ng-show="cartItems.length>0">
+		<table class="cart-table" border=1 frame=hsides rules=rows>
+		<!-- header 
+		    <tr class="cart-table-header">
+		        <td><b>Item</b></td>
+		        <td class="cart-tab-qty"><b>Quantity</b></td>
+		        <td class="cart-tab-price"><b>Price</b></td>
+		        <td />
+		    </tr>-->
+  		    <tr ng-repeat="item in cartItems">
+		    	<!--<p ng-show="!cartItems.length">Shopping Cart is Empty</p>-->
+		    	<td><img cart-image-section ng-src={{item.MainImage}} width="100px" height="100px">
+		    	<td><p id='cart-disp-name'>{{item.DisplayName}}</p>
+		    		<div ng-show="GetDisplaySizes(item)">
+		    	 		<p>Size: {{item.Sizes}}</p>
+		    	 	</div>
+		    	 	<p>Part Number: {{item.ItemCode}}</p>
+		    	</td>
+		    	<td id="cart-price">${{item.ListPrice}}</td>
+		    	<td id="cart-qty"><input class="cart-txt-qty" type="text"
+		    			   name="cartQty" 
+		    			   ng-model="item.Quantity"
+		    			   ng-change="UpdateTotal()"
+		    			   &nbsp;&nbsp;&nbsp;></td>
+		    	<td id="cart-totalprice"><p>${{item.ListPrice*item.Quantity}}</p>
+		    		<button id="btnRemove" type="button"
+	                 ng-click="RemoveItem(item)">Remove</button>
+		    	</td>
+			</tr>
+		</table>
+		<div class='cart-prices'>
+			<table class="cart-total-price" >
+				<tr>
+			    	<td id="cart-Total">Total</td>
+			    	<td id="cart-Total">${{total}}</td>
+				</tr>
+			</table>
+		</div>
+		<div class='cart-checkout'>
+			<button id="cart-btn-con-shop" ng-click="conShopping()">< Continue Shopping</button>
+			<button id="cart-btn-checkout" ng-click="checkout()">Check Out</button>
+		</div>
+	</div> <!--ng-show-->
+</div>
+

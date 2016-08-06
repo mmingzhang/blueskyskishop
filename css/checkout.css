@@ -1,0 +1,186 @@
+.number-step {
+  background-color: #1581c8;
+  color: white;
+  margin-right: 5px;
+  padding: 5px 10px;
+}
+
+.chk-bill-info {
+    float: left;
+    width: 36%;
+    /*padding-right: 20px;*/
+    box-sizing: border-box;
+}
+
+.chk-ship-pay {
+    float: left;
+    width: 32%;
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.chk-order {
+    float: left;
+    width: 32%;
+    margin: 0;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+em {
+    font-style: normal;
+    color: #eb340a;
+}
+
+.leftElement {
+  float:left;
+  width:45%;
+}
+
+.rightElement {
+  float:right;
+  margin-right: 16px;
+  width:45%;
+}
+
+
+.checkoutCtrl-container input[type="text"] {
+  height: 20px;
+  width: 95%;
+}
+
+#check-bill-email,#check-bill-zip,#credit-card-num,
+#check-ship-zip {
+  height: 20px;
+  width: 95%;
+}
+
+#check-bill-state, #check-bill-country, 
+#check-ship-state, #check-ship-country{
+  height: 27px;
+  width:95%;
+}
+
+.state-bill-info,.country-bill-info{
+  float:right;
+  margin-right: 12px;
+  width:45%;
+} 
+
+.shipDAddr-bill-info {
+  float: left;
+}
+
+#shipDAddr-billchk {
+  height: 17px;
+  width: 17px;
+  margin-right: 5px;
+}
+
+#btn-place-order {
+  height: 38px;
+  width: 70%;
+  font-size: 18px;
+  color:white;
+  background-color:rgb(145,200,255);
+  margin-top: 10px;
+  margin-right: 50px;
+}
+
+.dd-card-type {
+  width: 95%;
+  height: 30px;
+}
+
+.dd-card-exp-month {
+  width: 50%;
+  height: 30px;
+}
+
+.dd-card-exp-year {
+  width: 30%;
+  height: 30px;
+}
+
+#card-verf-num{
+  height: 20px;
+  width: 33%;
+}
+
+.order-detail {
+  width: 40%;
+  padding-right: 5%;
+}
+
+.order-qty {
+  width: 20%;
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.order-info {
+    height:500px;
+    width: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.order-prices {
+  width: 90%;
+}
+
+.order-sub-prices {
+  width:60%;
+  margin-left:auto; 
+  margin-right:0px;
+  margin-top: 20px;
+  text-align: right;
+  
+}
+
+.order-total-price {
+  width:60%;
+  margin-left:auto; 
+  margin-right:0px;
+  text-align: right;
+}
+
+@media screen and (max-width:1000px){
+  .chk-bill-info {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.chk-ship-pay {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.chk-order {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#btn-place-order {
+  font-size: 15px;
+}
+
+}
+
+@media screen and (max-width:500px){
+  .leftElement {
+  float:left;
+  width:100%;
+}
+
+.rightElement {
+  float:left;
+  width:100%;
+}
+
+}

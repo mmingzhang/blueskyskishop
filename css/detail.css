@@ -1,0 +1,78 @@
+.details {
+	position: relative;
+}
+.dt-image-sections {
+	position: absolute;
+	left:0px;
+	top:420px;
+  
+}
+
+.dt-second-image li {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.detail-info {
+  position: absolute;
+  left:420px;
+
+}
+
+.ddl-size {
+  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  font-size: 0.7em;
+  width: 148px; 
+  height: 40px;
+}
+
+.lb-qty, .dt-size {
+  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  font-size: 1.2em;  
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+
+.drop-down-size {
+  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  font-size: 0.8em; 
+  width: 145px;
+  height: 40px;
+}
+
+#btn-minus {
+  background: url('../image/MinusSign.png');
+}
+
+#btn-plus {
+  background: url('../image/PlusSign.png');
+}
+
+#btn-minus, #btn-plus {
+  background-color: rgb(247,240,213);
+  background-repeat:no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding-top: -300px;
+}
+
+#txt-qty {
+  text-align: center;
+  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  width: 60px;
+  height: 40px;
+}
+
+#btn-add-cart {
+    height: 58px;
+    font-size: 20px;
+    width: auto;
+    border-radius: 30px;
+    padding: 0px 40px;
+    color:white;
+    background-color:rgb(145,200,255);
+}

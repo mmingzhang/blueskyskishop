@@ -1,0 +1,46 @@
+<!-- Detail -->
+<div  ng-controller="DetailCtrl" class="details">
+  <form name="detailForm">
+  	<span class="dt-display-image" style="float:left"><img src={{item.DisplayImg}} width="400x" height="400px"></span>
+  	<div class="dt-image-sections">
+  		<ul class="dt-second-image">
+            <li class="sec-img-lst">
+              <img id="main-image" ng-src={{item.MainImage}} width="100x" height="100px" ng-click="showSelectedImage(0)">
+            </li>
+            <li class="sec-img-lst">
+              <div ng-show="GetEnableAltImage()">
+                <img id="alt-image" ng-src={{item.AltImage}} width="100x" height="100px" ng-click="showSelectedImage(1)">
+              </div>
+            </li>
+            <li class="sec-img-lst">
+              <div ng-show="GetEnableAltImage2()">
+                <img id="alt-image2" ng-src={{item.AltImage2}} width="100x" height="100px" ng-click="showSelectedImage(2)">
+              </div>
+             </li>
+      </ul>
+  	</div>
+  	<div class="detail-info">
+      <h2>{{item.DisplayName}}</h2>
+      <p>Part Number: {{item.ItemCode}}</p>
+      <h2>${{item.ListPrice}}</h2>
+      	<span class="dt-size">Size:&nbsp; 
+          <select class="drop-down-size" ng-model="selectedSizeItem" ng-options="s.Sizes as s.Sizes for s in selectedSizeItemArray"></select>
+          <!--<select ng-model="mail_notification" ng-options="c.key as c.value for c in mail_notifications"></select> -->
+        </span>
+      <br>
+      <br>
+      <div class="dt-qty">
+        <lable class="lb-qty">QTY: 
+        <button id="btn-minus" ng-click="decreaseQty()">-</button> 
+        <input id="txt-qty" type="number" min="1" max="1000" name="inputQty" ng-model="inputQty" required>
+        <button id="btn-plus" ng-click="increaseQty()">+</button>
+        </lable>
+      </div>
+      <br>
+      <button id="btn-add-cart" ng-click="detailForm.$valid && btnAdd2Cart()">Add to Cart</button>
+      <br>
+      <br>
+      <p>Brand: {{item.Brand}}</p>
+    </div>
+  </form>
+</div>       

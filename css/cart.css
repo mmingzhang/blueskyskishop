@@ -1,0 +1,103 @@
+#cart-title {
+	position: relative;
+}
+
+#cart-title {
+  color: rgb(100,100,100);
+  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.cart-empty-heading {
+  font-family: "Arial Black", "Helvetica Neue", sans-serif;
+  font-size: 1.2em;
+}
+
+.cart-empty-line {
+  font-family:"Arial", "Helvetica Neue", sans-serif;
+  font-size: 1.0em;
+  margin-top: -10px;
+}
+
+.cart-table {
+  width:95%;
+}
+
+.cart-txt-qty{
+	width: 30px;
+}
+
+#cart-price, #cart-qty {
+	text-align: center;
+}
+
+#cart-totalprice {
+	text-align: right;
+}
+
+#btnRemove {
+	background: rgb(247,240,213);
+	border: none;
+	color: rgb(0,138,198);
+}
+
+.cart-prices {
+	width:95%;
+  margin-top: 10px;
+}
+.cart-sub-prices {
+	width:20%;
+	margin-left:auto; 
+  margin-right:0px;
+  margin-top: 20px;
+  text-align: right;
+	
+}
+
+.cart-total-price {
+	width:20%;
+	margin-left:auto; 
+  margin-right:0px;
+  text-align: right;
+}
+
+#cart-total-line {
+	width:20%;
+	margin-left:auto; 
+    margin-right:0px;
+	text-align:right;
+}
+
+#cart-disp-name, #cart-Total {
+	font-family:"Arial Black", "Helvetica Neue", sans-serif;
+  	font-size: 1.0em;
+  	font-weight: bold;
+}
+
+.cart-checkout {
+	float: right;
+}
+
+#cart-btn-checkout {
+	height: 38px;
+	width: 150px;
+  font-size: 18px;
+  color:white;
+  background-color:rgb(145,200,255);
+  margin-top: 10px;
+  margin-right: 50px;
+}
+
+#cart-btn-con-shop {
+	height: 38px;
+	width: 270;
+  font-size: 18px;
+  color:rgb(0,138,198);
+  background-color:white;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+

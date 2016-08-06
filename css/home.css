@@ -1,0 +1,198 @@
+.home-images {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+}
+
+.sliderimg {
+  position: relative;
+}
+
+.arrows img{
+  	height: 40px;
+}
+
+.arrow {
+    position: absolute;
+    top: 45%;
+}
+
+.arrow.prev{
+  opacity: 0.3;
+  left: 20px;
+  transition: 0.2s linear all;
+}
+
+.arrow.next{
+  opacity: 0.3;
+  right: 20px;
+  transition: 0.2s linear all;
+}
+
+.arrow.prev:hover {
+	opacity: 1;
+	left: 20px;
+}
+
+.arrow.next:hover {
+    opacity: 1;
+  	right: 20px;
+}
+
+.home-image-section {
+	position: relative;
+}
+
+.home-text {
+  position: absolute;
+  left:494px;
+  top: 20px; 
+  margin-right: 10px;
+  color: rgb(31,73,125);
+  font-family:"Arial Black", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.home-img-skiGear {
+	position: absolute;
+	left:0px;
+	top:25px;
+  
+}
+
+.home-shop-ski {
+  position: absolute;
+  left:25%;
+  top:50px;
+}
+
+.home-img-goggle {
+  position: absolute;
+  left:0px;
+  top:420px;
+  
+}
+
+.home-shop-goggles {
+  position: absolute;
+  left:25%;
+  top:165px;
+}
+
+.home-img-snowboardGear {
+	position: absolute;
+	left:248px;
+  /* left: 24%;*/
+	top:100px;
+  
+}
+
+.home-shop-snowboard {
+  position: absolute;
+  left:13%;
+  top:300px;
+  z-index: 1;
+}
+
+.home-img-helmets {
+	position: absolute;
+	left:494px;
+  /* left: 48%;*/
+	top:220px;
+  
+}
+
+.home-shop-helmets {
+  position: absolute;
+  left:40%;
+  top:300px;
+  z-index: 1;
+}
+
+.home-img-accessories {
+	position: absolute;
+	left:741px;
+  /*left: 72%;*/
+	top:440px;
+}
+
+.home-shop-accessories {
+  position: absolute;
+  left:25%;
+  top:140px;
+}
+
+.shop-img {
+  text-decoration:none;
+}
+
+@media screen and (max-width:1200px){
+  .top-navigation {
+  height: 60px;
+  }
+  .home-img-helmets {
+  position: absolute;
+  /*left:494px;*/
+  left:0px;
+  top:635px;
+  }
+  .home-img-accessories {
+  position: absolute;
+  left:248px;
+  top:855px;
+  }
+  
+}
+
+@media screen and (max-width:800px){
+  .top-navigation {
+  height: 100px;
+  }
+  .heading {
+  height: 150px;
+  }
+  .cart-image {
+  left: 20px;
+  top: 70px;
+  }
+  .phone {
+  left: 20px;
+  top: 80px; 
+  }
+  .home-text {
+  position: absolute;
+  left:248px;
+  top: 20px; 
+  }
+  .home-img-snowboardGear {
+  position: absolute;
+  left:0;
+  top:635px;
+  }
+  .home-img-helmets {
+  position: absolute;
+  left:0px;
+  top:1170px;
+  }
+  .home-img-accessories {
+  position: absolute;
+  left:0;
+  top:1585px;
+  }
+  #contact-user-name,#contact-user-email,#contact-user-phone {
+  height: 20px;
+  width: 90%;
+  }
+  #contact-user-msg {
+  height: 100px;
+  width: 90%;
+  }
+}
+
+@media screen and (max-width:500px){
+  .top-navigation {
+  height: 170px;
+  }
+}

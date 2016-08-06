@@ -1,0 +1,30 @@
+<!-- Contact Us -->
+<div  ng-controller="ContactCtrl" class="ContactCtrl-container">
+	<form name="contactForm">
+		<div class="contact-info">
+			<h2>INFORMATION</h2>
+			<p class="contact-phone"><img src="image/phone.png" style="width:17px;height:17px;"><span>&nbsp;&nbsp;Phone: 1.877.987.6543</span></p>
+			<p class="contact-email"><img src="image/email.png" style="width:17px;height:17px;"><span>&nbsp;&nbsp;Email: mingzhang.shop@gmail.com</span></p>
+		</div>
+		<div class="contact-sendmsg">
+			<h2>SEND US A MESSAGE</h2>
+			<label for="contact-user-name">Name</label><em>*</em><br>
+			<input id="contact-user-name" type="text" name="contactUser.name" ng-model="contactUser.name" required><br>
+			<p>
+			<label for="contact-user-email">Email</label><em>*</em><br>
+			<input id="contact-user-email" type="email" name="contactUser_email" ng-model="contactUser_email" required>
+			<span class="inputEmail" ng-show="contactForm.contactUser_email.$error.email">Invalid email address.</span><br>
+			</p>
+			<div style="clear:both;">
+				<label for="contact-user-phone">Telephone</label><br>
+				<input id="contact-user-phone" type="text" name="contactUser.phone" ng-model="contactUser.phone"><br><br>
+			</div>
+			<label for="contact-user-msg">Message</label><em>*</em><br>
+			<textarea id="contact-user-msg" name="contactUser.msg" ng-model="contactUser.msg" required>
+			</textarea><br><br>
+			<!--<a id="contact-send" ng-href="mailto:{{'mingzhang.shop@gmail.com?Subject=ContactInfo&body=' + btnSendMsg()}}">Send</a> // mailto used in old browsers-->
+			<button id="btn-contact-send" ng-click="contactForm.$valid && btnSendMsg()">Send</button>
+		</div>
+	</form>
+</div>
+

@@ -1,0 +1,200 @@
+<!-- checkout -->
+<div  ng-controller="CheckoutCtrl" class="checkoutCtrl-container">
+	<h2 id="chk-title">Checkout</h2>
+	<p id="chk-text">Please enter your details below to complete your purchase</p>
+	<!--<p class="chk-login-text">Already registered? <span><a class="chk-login" href="#/login">Click here to login.</a></span></p>-->
+	<form name="checoutForm">
+		<div class="chk-bill-info">
+			<h3><span class="number-step">1</span>Billing Information</h3>
+			<div>
+				<div class="first-bill leftElement">
+					<label for="check-bill-first">First Name</label><em>*</em><br>
+					<input id="check-bill-first" type="text" ng-model="check_bill_first" required>
+				</div>
+				<div class="last-bill rightElement" >
+					<label for="check-bill-last">Last Name</label><em>*</em><br>
+					<input id="check-bill-last" type="text" ng-model="check_bill_last" required><br><br>
+				</div>
+	        </div>
+	        <div style="clear:both;">
+				<label for="company-bill">Company</label>
+				<input id="check-bill-company" type="text" ng-model="check_bill_company"><br><br>
+			</div>
+			<label for="check-bill-email">Email Address</label><em>*</em><br>
+			<input id="check-bill-email" type="email" name="check_bill_email" ng-model="check_bill_email" required>
+			<span class="inputEmail" ng-show="checoutForm.check_bill_email.$error.email">Invalid email address.</span>
+			<br><br>
+			<label for="check-bill-addr">Address</label><em>*</em><br>
+			<input id="check-bill-addr" type="text" ng-model="check_bill_addr" required><br><br>
+			
+			<label for="check-bill-apt">Apt #/Unit #</label><br>
+			<input id="check-bill-apt" type="text" ng-model="check_bill_apt"><br><br>
+			
+			<div class="city-bill-info leftElement">
+				<label for="check-bill-city">City</label><em>*</em><br>
+				<input id="check-bill-city" type="text" ng-model="check_bill_city" required>
+			</div>
+			<div class="state-bill-info rightElement">
+				<label for="check-bill-state">State</label><em>*</em><br>
+				<select id="check-bill-state" ng-model="check_bill_state" ng-options="stateItem as stateItem for stateItem in billStateArray" required>
+				<option value="">Select State</option>	
+				</select><br><br>
+			</div>
+			<div class="zip-bill-info leftElement" style="clear: both;">
+				<label for="check-bill-zip">Zip/Postal Code</label><em>*</em><br>
+				<input id="check-bill-zip" type="number" min="10000" max="99999" ng-model="check_bill_zip" required><br><br>
+			</div>
+			<div class="country-bill-info rightElement">
+				<label for="check-bill-country">Country</label><em>*</em><br>
+				<select id="check-bill-country" ng-model="check_bill_country" ng-options="countryItem as countryItem for countryItem in billCountryArray" required></select><br><br>
+			</div>
+			<div class="phone-bill-info leftElement">
+				<label for="check-bill-phone">Telephone</label><em>*</em><br>
+				<input id="check-bill-phone" type="text" ng-model="check_bill_phone" required><br><br>
+			</div>
+			<div class="fax-bill-info rightElement">
+				<label for="check-bill-fax">Fax</label><br>
+				<input id="check-bill-fax" type="text" ng-model="check_bill_fax"><br><br>
+			</div>
+			<br>
+			<div class="shipDAddr-bill-info">
+			     <input id="shipDAddr-billchk" type = "checkbox" ng-model="ShipOtherAddr" ng-click="UpdateShipAddr()">Ship to a different address<br>
+			    <div ng-show = "ShipOtherAddr">
+			    	<h3>Shipping Address</h3>
+					<br>
+					<div class="first-bill leftElement">
+						<label for="check-ship-first">First Name</label><em>*</em><br>
+						<input id="check-ship-first" type="text" ng-model="check_ship_first">
+					</div>
+					<div class="last-bill rightElement">
+						<label for="check-ship-last">Last Name</label><em>*</em><br>
+						<input id="check-ship-last" type="text" ng-model="check_ship_last"><br><br>
+					</div>
+			        <div style="clear:both;">
+						<label for="check-ship-company">Company</label>
+						<input id="check-ship-company" type="text" ng-model="check_ship_company"><br><br>
+					</div>
+					<label for="check-ship-addr">Address</label><em>*</em><br>
+					<input id="check-ship-addr" type="text" ng-model="check_ship_addr"><br><br>
+					
+					<label for="check-ship-apt">Apt #/Unit #</label><br>
+					<input id="check-ship-apt" type="text" ng-model="check_ship_apt"><br><br>
+					
+					<div class="city-bill-info leftElement">
+						<label for="check-ship-city">City</label><em>*</em><br>
+						<input id="check-ship-city" type="text" ng-model="check_ship_city">
+					</div>
+					<div class="state-bill-info rightElement">
+						<label for="check-ship-state">State</label><em>*</em><br>
+						<select id="check-ship-state" ng-model="check_ship_state" ng-options="stateItem as stateItem for stateItem in billStateArray">
+						<option value="">Select State</option>
+						</select><br><br>
+					</div>
+					<div class="zip-bill-info leftElement" style="clear: both;">
+						<label for="check-ship-zip">Zip/Postal Code</label><em>*</em><br>
+						<input id="check-ship-zip" type="number" min="10000" max="99999" ng-model="check_ship_zip"><br><br>
+					</div>
+					<div class="country-bill-info rightElement">
+						<label for="check-ship-country">Country</label><em>*</em><br>
+						<select id="check-ship-country" ng-model="check_ship_country" ng-options="countryItem as countryItem for countryItem in billCountryArray"></select><br><br>
+					</div>
+					<div class="phone-bill-info leftElement">
+						<label for="check-ship-phone">Telephone</label><em>*</em><br>
+						<input id="check-ship-phone" type="text" ng-model="check_ship_phone"><br><br>
+					</div>
+					<div class="fax-bill-info rightElement">
+						<label for="check-ship-fax">Fax</label><br>
+						<input id="check-ship-fax" type="text" ng-model="check_ship_fax"><br><br>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="chk-ship-pay">
+			<h3><span class="number-step">2</span>Shipping Method</h3>
+		    <div class="shipping-containter">
+				<div ng-repeat="shipType in shipTypeArray">
+					<h4>{{shipType.name}}</h4>
+		            <label>
+		                <input class="check-ship-method" type="radio" ng-value="shipType.price" ng-model="$parent.selectedShip" ng-click="UpdateSelectShip(shipType)" />{{shipType.detail}}
+		            </label>
+		        </div>
+		    </div>
+		    <div class="chk-pay-container">
+				<h3><span class="number-step">3</span>Payment Method</h3>
+				<div class="card-section">
+					<div class="card-type-info">
+						<!--<span class="card-info"><p id="credit-card-type">Credit Card Type<em>*</em>&nbsp;&nbsp;<img class="card-image" style="width:160px;height:30px;" src="image/CreditCard.jpg"></p>
+						</span><br>-->
+						<p id="credit-card-type">Credit Card Type<em>*</em>&nbsp;&nbsp;<img class="card-image" style="width:160px;height:30px;" ng-src="image/CreditCard.jpg"></p>
+						<select class="dd-card-type" ng-model="creditCardTypeItem" ng-options="cctItem as cctItem for cctItem in creditCardTypeArray" required>
+						<option value="">Please Select</option>
+						</select><br><br>
+					</div>
+					<div class="card-num-info">
+						<label for="credit-card-num">Credit Card Number</label><em>*</em><br>
+						<input id="credit-card-num" type="number" min="1e14" max="1e16" name="cardNumPay" ng-model="cardNumPay" required><br>
+					</div>
+					<div class="card-exp-date-info">
+						<p id="card-exp-month">Expiration Date<em>*</em></p>
+						<select class="dd-card-exp-month" ng-model="creditCardExpDateMItem" ng-options="cExpMItem as cExpMItem for cExpMItem in creditCardExpDateMArray" required>
+						<option value="">Month</option>
+						</select>
+						<select class="dd-card-exp-year" ng-model="creditCardExpDateYItem" ng-options="cExpYItem as cExpYItem for cExpYItem in creditCardExpDateYArray" required>
+						<option value="">Year</option>
+						</select><br><br>
+					</div>
+					<div class="card-verf-info">
+						<label for="card-verf-num">Card Verification Number</label><em>*</em><br>
+						<input id="card-verf-num" type="number" min="100" max="999" name="cardVerfNum" ng-model="cardVerfNum" required>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="chk-order">
+			<h3><span class="number-step">4</span>Review Your Order</h3>
+			<div class="order-info">
+				<table class="order-table" border=1 frame=hsides rules=rows>
+				    <!--<tr class="order-table-header">
+				        <td><b>Product Name</b></td>
+				        <td class="order-tab-qty"><b>Qty</b></td>
+				        <td class="order-tab-price"><b>Subtotal</b></td>
+				        <td />
+				    </tr>-->
+				    <tr ng-repeat="item in orderItems">
+				    	<td class="order-detail"><img order-image-section ng-src={{item.MainImage}} width="60px" height="60px">
+				    		<p id='order-disp-name'>{{item.DisplayName}}</p>
+				    	 	<div ng-show="GetDisplaySizes(item)">
+				    	 		<p>Size: {{item.Sizes}}</p>
+				    	 	</div>
+				    	 	<p>Part No: {{item.ItemCode}}</p>
+				    	</td>
+				    	<td class="order-qty"><p>{{item.Quantity}}</p></td>
+				    	<td class="order-subprice"><p>${{item.ListPrice*item.Quantity}}</p></td>
+					</tr>
+				</table>
+			</div>
+			<div class='order-prices'>
+				<table class="order-sub-prices">
+					<tr>
+				    	<td id="order-subtotal">Subtotal</td>
+				    	<td id="order-subtotal-value">${{subtotal}}</td>
+					</tr>
+					<tr>
+				    	<td id="order-shipping">Shipping</td>
+				    	<td id="order-shipping-value">${{selectedShip}}</td>
+					</tr>
+				</table>
+				<hr id='order-total-line'>
+				<table class="order-total-price">
+					<tr>
+				    	<td id="order-Total">Order Total</td>
+				    	<td id="order-Total">${{total}}</td>
+					</tr>
+				</table>
+				<hr>
+			</div>
+			<button id="btn-place-order" ng-click="checoutForm.$valid && placeOrder()">Place Order Now</button>
+		</div>
+	</form>
+</div>

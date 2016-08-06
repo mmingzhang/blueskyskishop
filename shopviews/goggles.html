@@ -1,0 +1,11 @@
+<ul class="displayitems">
+	<li ng-repeat="item in items | skiShopFilter:'goggles'">
+        <img ng-src={{item.MainImage}} width="150px" height="150px">
+        <div class="displayinfo">
+        	<br>
+			<a href="#/detail/{{item.ItemCode}}">{{item.DisplayName}}</a>
+            <p>Price: ${{item.ListPrice}}</p>
+        </div>
+    </li>
+</ul>
+    
