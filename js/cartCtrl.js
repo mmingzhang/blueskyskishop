@@ -9,7 +9,7 @@ function CartCtrl($scope, Page, skiService, $location, $rootScope, cartServices)
         var id = item.ItemCode;
         cartServices.RemoveCartItem(id);
         // Update 
-        cartServices.updateSubtotal();
+        cartServices.updateTotalPrice();
         $scope.cartItems = cartServices.getAll();
 		$scope.total = cartServices.getTotal();
     }
